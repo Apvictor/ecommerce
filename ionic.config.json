@@ -1,0 +1,7 @@
+{
+  "name": "newEcommerce",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
