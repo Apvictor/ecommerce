@@ -1,0 +1,20 @@
+<ion-card (click)="cliqueNoCard($event)">
+  <ion-card-header>
+    <ion-item detail="false" lines="none" routerLink="/app/tabs/speakers/speaker-details/">
+      <ion-thumbnail slot="start">
+        <img [src]="produto.imagem" [alt]="produto.nome + ' profile picture'">
+      </ion-thumbnail>
+      <ion-label>
+        <h2 class="title-card">{{produto.nome}}</h2>
+        <div>
+          <avaliacao-app [avaliacao]="produto.avaliacao"></avaliacao-app>
+        </div>
+        <p><small>R$</small> {{produto.preco | moneyBr}}</p>
+      </ion-label>
+      <ion-icon *ngIf="!produto.carrinho" (click)="cliqueNoCarrinho($event)" class="icon-acao" color="primary"
+        name="cart-outline"></ion-icon>
+      <ion-icon *ngIf="produto.carrinho" (click)="cliqueNaLixeira($event)" class="icon-acao" color="danger"
+        name="trash-outline"></ion-icon>
+    </ion-item>
+  </ion-card-header>
+</ion-card>
